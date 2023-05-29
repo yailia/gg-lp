@@ -1,0 +1,44 @@
+<div class="mob-nav">
+  <a href="mailto:welcome@aggency.ru" class="mob-nav__contact">начать проект</a>
+  <a href="#hero" class="mob-nav__up">наверх</a>
+</div>
+
+<style lang="scss">
+  .mob-nav {
+    display: flex;
+    gap: 4px;
+    position: fixed;
+    bottom: 13px;
+    right: 10px;
+    z-index: 500;
+    @media(min-width: 769px) {
+      display: none;
+    }
+  }
+
+  .mob-nav__contact {
+    display: flex;
+    place-items: center;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    background: #000000;
+    border: 1px solid #424242;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .mob-nav__up {
+    border-radius: 1000vh;
+    background: #92D1FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 38px;
+    height: 38px;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='15' height='19' viewBox='0 0 15 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.22078 0.590134C7.83025 0.19961 7.19709 0.19961 6.80657 0.590134L0.442604 6.9541C0.0520797 7.34462 0.0520797 7.97778 0.442604 8.36831C0.833128 8.75883 1.46629 8.75883 1.85682 8.36831L7.51367 2.71145L13.1705 8.36831C13.5611 8.75883 14.1942 8.75883 14.5847 8.36831C14.9753 7.97778 14.9753 7.34462 14.5847 6.9541L8.22078 0.590134ZM8.51367 18.2432V1.29724H6.51367V18.2432H8.51367Z' fill='black'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+  }
+</style>

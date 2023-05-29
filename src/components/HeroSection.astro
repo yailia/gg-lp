@@ -3,7 +3,7 @@ import NavBar from "./NavBar.astro";
 
 ---
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero__container">
     <h1 class="hero__title">
       <span class="hero__svg">gg</span>
@@ -63,7 +63,9 @@ import NavBar from "./NavBar.astro";
     }
   }
   .hero.nav_sticky {
-    padding-bottom: 74px;
+    @media (min-width: 1200px) {
+      padding-bottom: 74px;
+    }
   }
 
   .nav_sticky .hero__nav {
@@ -125,8 +127,5 @@ import NavBar from "./NavBar.astro";
     @media (min-width: 1200px) {
       margin-bottom: 5.75rem;
     }
-  }
-
-  .hero__nav {
   }
 </style>

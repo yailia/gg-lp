@@ -30,7 +30,7 @@ const items: Item[] = [
 ];
 ---
 
-<section class="us">
+<section class="us" id="us">
   <ul class="us__list">
     {
       items.map((i) => (
@@ -56,21 +56,34 @@ const items: Item[] = [
 
 <style lang="scss">
   .us {
+    display: flex;
     margin-bottom: 2.6875rem;
+    @media (min-width: 1200px) {
+      display: block;
+    }
     @media (min-width: 1200px) {
       margin-bottom: 6rem;
     }
   }
-
+  
   .us__list {
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 720px) {
+      display: grid;
+      grid-template-areas:
+      "f f"
+      "s t";
+    }
     @media (min-width: 1200px) {
       max-width: 60.75rem;
       margin: 0 auto;
-      display: grid;
       grid-template-areas:
-        "f s"
-        "f t";
+      "f s"
+      "f t";
       grid-template-columns: min-content min-content;
+      // align-items: start;
+      // justify-items: start;
     }
   }
 

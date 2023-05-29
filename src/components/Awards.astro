@@ -3,7 +3,7 @@ import SectionTitle from "./shared/SectionTitle.astro";
 const imgs = await Astro.glob("/public/awards/*.png")
 ---
 
-<section class="awards">
+<section class="awards" id="awards">
   <div class="container">
     <SectionTitle>наши награды</SectionTitle>
   </div>
@@ -41,7 +41,12 @@ const imgs = await Astro.glob("/public/awards/*.png")
     padding-left: 11px;
     display: flex;
     flex-direction: column;
+    @media (min-width: 720px) {
+      align-items: center;
+    }
+    
     @media (min-width: 1200px) {
+      align-items: start;
       margin-top: 2rem;
       padding-left: 60px;
       margin-bottom: 115px;
