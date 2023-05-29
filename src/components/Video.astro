@@ -1,0 +1,52 @@
+  <section class="video">
+    <video
+      class="video__video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+    >
+      <source src="/vid.webm">
+    </video>
+  </section>
+
+<script>
+
+  const video = document.querySelector('.video__video') as HTMLVideoElement;
+  const target = document.querySelector('.video__video');
+  if (target) {
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.75,
+  };
+
+  const cd: IntersectionObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("play")
+        video?.play();
+      } else {
+        console.log("pause")
+        video?.pause();
+      }
+    }, options);
+  } 
+  const observer = new IntersectionObserver(cd, options);
+
+    observer.observe(target);
+
+    console.log("observer", observer)
+  }
+</script>
+
+<style lang="scss">
+  .video {
+    margin-bottom: 1.5rem;
+  }
+
+  .video__video {
+    width: 100%;
+  }
+</style>

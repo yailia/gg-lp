@@ -1,0 +1,61 @@
+---
+import SectionTitle from "./shared/SectionTitle.astro";
+const imgs = await Astro.glob("/public/awards/*.png")
+---
+
+<section class="awards">
+  <SectionTitle>наши награды</SectionTitle>
+  <div class="awards__title">
+    <span class="awards__bold">70+ наград</span>
+    <span class="awards__text">различных</span>
+    <span class="awards__text">фестивалей и премий</span>
+  </div>
+  <ul class="awards__list">
+    {
+      imgs.map(i => (
+        <li class="awards__item">
+          <img class="awards__img" src={i.default} alt="Награда" />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang="scss">
+
+  .awards {
+    margin-bottom: 2.3125rem;
+  }
+
+  .awards__title {
+    margin-bottom: 2.375rem;
+    padding-top: 2.375rem;
+    padding-left: 11px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .awards__bold {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 0.8;
+  }
+  .awards__text {
+    font-weight: 300;
+    font-size: 2.25rem;
+    line-height: 0.8;
+  }
+
+  .awards__list {
+    padding-left: 11px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.8125rem 0;
+  }
+
+  .awards__item {
+    flex-basis: 50%;
+  }
+</style>
+

@@ -1,0 +1,170 @@
+---
+type Item = {
+  number: number;
+  text?: string;
+  addText?: string;
+  hasPlus?: boolean;
+  desAd?: string;
+}
+
+const items: Item[] = [
+  {
+    number: 15,
+    text: 'эффективные кампании на\u00A0российском рынке',
+    addText: 'запускаем',
+    hasPlus: true,
+    desAd: 'лет',
+  },
+  {
+    number: 70,
+    addText: 'талантов в\u00A0команде',
+    hasPlus: true,
+  },
+  {
+    number: 3,
+    addText: `Собственные студии: <br/>
+      3D-дизайн <br/> 
+      hi-res preprint <br/>
+      digital департамент`,
+  },
+]
+---
+
+<section class="us">
+  <ul class="us__list">
+    {
+      items.map(i => (
+        <li class="us__item">
+          <div class="number__wrp">
+            <span class="number">{i.number}</span>
+            <div class="number__desc-wrp">
+              {i.hasPlus && (
+                <div class="plus">+</div>)}
+              {i.desAd && (
+                <div class="des_ad">{i.desAd}</div>
+              )}
+              {i.addText && (
+                <div class="des_ad des_ad_thin">
+                  <Fragment set:html={i.addText} />
+                </div>
+              )}
+            </div>
+          </div>
+          {
+            i.text && (
+              <div class="text">
+                {i.text}
+              </div>
+            )
+          }
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang="scss">
+
+  .us {
+    margin-bottom: 2.6875rem;
+  }
+
+  .us__list {
+    @media (min-width: 1200px) {
+      max-width: min-content;
+      margin: 0 auto;
+      display: grid;
+      grid-template-areas: 
+        "f s"
+        "f t"
+      ;
+      grid-template-columns: min-content min-content;
+    }
+  }
+
+  .us__item {
+    --number-size: 6.1875rem;
+    --plus-size: 2.5625rem;
+  }
+  .number__wrp {
+    display: flex;
+    font-size: 6.875rem;
+  }
+  .plus {
+    font-size: 3.75rem;
+  }
+
+  .number__desc-wrp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .des_ad {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  
+  .us__item:not(:first-child) {
+    .number__wrp {
+      display: grid;
+      grid-template-areas: 
+        "number des"
+        "number des";
+        grid-template-columns: min-content 129px;
+        grid-template-rows: var(--number-size) 1fr;
+        gap: 0 12px;
+    }
+    .plus {
+      font-size: 2.5625rem;
+    }
+    .number__wrp {
+      padding-left: 3.85rem;
+    }
+    .des_ad {
+      max-width: 129px;
+      line-height: 1.61;
+    }
+    .number {
+      grid-area: number;
+      font-size: var(--number-size);
+    }
+    .number__desc-wrp {
+      grid-area: des;
+      align-self: end;
+    }
+    .des_ad {
+      margin-top: calc(var(--number-size) - 1.61rem - var(--plus-size));
+    }
+  }
+
+  .us__item:first-child {
+    grid-area: f;
+    margin-bottom: 1.4375rem;
+    .des {
+      font-size: 2.25rem;
+    }
+    .des_ad {
+      font-size: 2.25rem;
+    }
+    .des_ad_thin {
+      font-weight: 300;
+    }
+    .text {
+      font-weight: 300;
+      font-size: 2.25rem;
+      line-height: 0.89;
+      max-width: 18.75rem;
+      margin-left: 3.5rem;
+    }
+  }
+
+  .us__item:last-child {
+    grid-area: t;
+    margin-top: 0.35rem;
+    --number-size: 4.8rem;
+    --plus-size: 0px;
+    .number__wrp {
+      padding-left: 4.5rem;
+    }
+  }
+</style>

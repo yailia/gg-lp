@@ -1,4 +1,13 @@
 ---
+import Awards from "../components/Awards.astro";
+import Clients from "../components/Clients.astro";
+import Footer from "../components/Footer.astro";
+import HeroSection from "../components/HeroSection.astro";
+import NavBar from "../components/NavBar.astro";
+import Projects from "../components/Projects.astro";
+import Us from "../components/Us.astro";
+import Video from "../components/Video.astro";
+
 ---
 
 <html lang="en">
@@ -7,9 +16,19 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/global.css" />
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main>
+			<!-- <NavBar /> -->
+			<HeroSection />
+			<Us />
+			<Clients />
+			<Video />
+			<Projects />
+			<Awards />
+			<Footer />
+		</main>
 	</body>
 </html>

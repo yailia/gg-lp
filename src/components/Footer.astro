@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="footer__container">
+    <div class="item item_ltd">
+      ООО "Джи Джи" креативное агентство
+    </div>
+    <div class="item item_cont">
+      москва <br />
+      +7 495 663 7650 
+      Олимпийский проспект 16/5
+    </div>
+    <a href="mailto:welcome@aggency.ru" class="link">почта: welcome@aggency.ru</a>
+  </div>
+  <div class="date">{new Date().getFullYear()}</div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 11px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: 300;
+  }
+
+  .footer__container {
+    display: grid;
+    grid-template-areas: 
+      "ltd"
+      "cont"
+      "link"
+    ;
+  }
+
+  .item_ltd {
+    max-width: 11.5rem;
+    margin-bottom: 18px;
+  }
+
+  .item_cont {
+    max-width: 14rem;
+  }
+
+  .link {
+    margin-top: 33px;
+    margin-bottom: 33px;
+  }
+
+</style>

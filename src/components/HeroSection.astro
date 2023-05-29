@@ -1,0 +1,126 @@
+---
+import NavBar from "./NavBar.astro";
+
+---
+
+<section class="hero">
+  <div class="hero__container">
+    <h1 class="hero__title">
+      <span class="hero__svg">gg</span>
+      <span class="hero__text">креативное</span>
+      <span class="hero__text">агенство</span>
+    </h1>
+  
+    <div class="hero__description">
+      <div class="hero__desc-text">ex VMLY&R</div>
+      <div class="hero__desc-text">ex Geometry</div>
+    </div>
+  </div>
+  <div class="hero__nav">
+    <NavBar />
+  </div>
+</section>
+
+<script>
+  const hero = document.querySelector(".hero");
+  const options = {
+    root: null,
+    rootMargin: "-120px 0px 0px 0px",
+    threshold: 0,
+  };
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry.isIntersecting);
+      if (!entry.isIntersecting) {
+        entry.target.classList.add("nav_sticky");
+      } else {
+        entry.target.classList.remove("nav_sticky");
+      }
+    });
+  }, options);
+  if(hero) {
+    obs.observe(hero);
+  }
+</script>
+
+<style lang="scss">
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 34px;
+    background: #EBD0BF url("/bg.webp") no-repeat center bottom /cover;
+  }
+
+  .hero__nav {
+    display: none;
+    @media (min-width: 1200px) {
+      display: block;
+    }
+  }
+  .hero.nav_sticky {
+    padding-bottom: 74px;
+  }
+
+  .nav_sticky .hero__nav {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 5000;
+  }
+  
+
+  .hero__container, .hero__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__title {
+    margin-bottom: 18.75rem;
+    @media (min-width: 1200px) {
+      margin-bottom: 233px;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      .hero__svg {
+        max-height: 70px;
+        flex-basis: 100%;
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+      .hero__text {
+        font-size: 60px;
+        line-height: 62px;
+      }
+      
+      .hero__text:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .hero__svg {
+    content: url("data:image/svg+xml,%0A%3Csvg width='54' height='27' viewBox='0 0 54 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_127_4306)'%3E%3Cpath d='M24.2596 12.8185H13.4184V17.9635H20.5611C19.4218 19.7646 17.6164 21.0969 15.4692 21.6184C13.322 22.1399 11.0827 21.7805 9.16339 20.6148C7.24843 19.4447 5.90314 17.6172 5.38606 15.4699C4.8646 13.3225 5.22393 11.0831 6.38955 9.16358C7.55956 7.24847 9.38687 5.90307 11.5341 5.38595C14.8732 4.5752 18.243 5.91184 20.1842 8.49746L24.5531 5.76284C21.455 1.34975 15.8679 -0.964157 10.3203 0.381242C6.83652 1.22705 3.87864 3.39195 1.99436 6.48155C0.110075 9.57115 -0.463973 13.191 0.381762 16.6794C1.2275 20.1634 3.39223 23.1215 6.48158 25.006C8.64193 26.3251 11.0608 27 13.5104 27C14.5665 27 15.6269 26.8729 16.6786 26.6187C21.8932 25.3566 25.8634 21.1232 26.7924 15.838L24.2596 12.8185Z' fill='black'/%3E%3Cpath d='M34.9594 21.7104H41.9532L41.3265 20.2467C40.862 20.3124 40.3888 20.3519 39.9111 20.3519C34.4248 20.3519 29.9639 15.8906 29.9639 10.4038C29.9639 4.91704 34.4248 0.45575 39.9111 0.45575C39.9988 0.45575 40.082 0.45575 40.1697 0.460132H51.5586L54.0038 3.37443C53.8811 4.08 53.6971 4.76365 53.4648 5.4254H48.5219C49.372 6.88912 49.8628 8.58511 49.8628 10.3994C49.8628 13.6336 48.3115 16.5129 45.9101 18.3316L47.8733 22.9024L49.4947 26.6888H31.3968L34.9594 21.706V21.7104ZM45.0074 10.3994C45.0074 7.59469 42.7332 5.31584 39.933 5.30269H39.9111C37.0978 5.30269 34.8148 7.59031 34.8148 10.3994C34.8148 13.2085 37.1022 15.4962 39.9111 15.4962C42.72 15.4962 45.0074 13.2085 45.0074 10.3994Z' fill='black'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_127_4306'%3E%3Crect width='54' height='27' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  }
+
+  .hero__text {
+    font-size: 2.185rem;
+    line-height: 0.82;
+    font-weight: 300;
+  }
+
+  .hero__description {
+    padding: 1.4375rem;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    max-width: 939px;
+    @media (min-width: 1200px) {
+      margin-bottom: 109px;
+    }
+  }
+
+  .hero__nav {
+  }
+</style>

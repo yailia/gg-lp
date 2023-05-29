@@ -1,0 +1,104 @@
+---
+const logos = await Astro.glob('/public/logos/*.svg');
+
+const mobLogos = [...logos].splice(logos.length / 2).concat([...logos].splice(0, logos.length / 2));
+
+---
+
+<div class="slider">
+  <ul class="slider__list">
+    {
+      logos.map(logo => {
+        return (
+          <li class="slider__item">
+            <img src={logo.default} alt={logo.name} />
+          </li>
+        )
+      })
+    }
+  </ul>
+  <ul class="slider__list">
+    {
+      logos.map(logo => {
+        return (
+          <li class="slider__item">
+            <img src={logo.default} alt={logo.name} />
+          </li>
+        )
+      })
+    }
+  </ul>
+</div>
+<div class="slider slider_mob">
+  <ul class="slider__list slider__list_mob">
+    {
+      mobLogos.map(logo => {
+        return (
+          <li class="slider__item">
+            <img src={logo.default} alt={logo.name} />
+          </li>
+        )
+      })
+    }
+  </ul>
+  <ul class="slider__list slider__list_mob">
+    {
+      mobLogos.map(logo => {
+        return (
+          <li class="slider__item">
+            <img src={logo.default} alt={logo.name} />
+          </li>
+        )
+      })
+    }
+  </ul>
+</div>
+
+<style lang="scss">
+
+  .slider.slider_mob {
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  .slider {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider__list, .slider {
+    display: flex;
+    align-items: center;
+  }
+  .slider__item {
+    margin: 0 1.75rem;
+  }
+  .slider__list {
+    padding-top: 1.5rem;
+    animation: move 35s linear infinite;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(-110%);
+    }
+  }
+
+  .slider__list_mob {
+    padding-top: 0;
+    animation: move-mob 35s linear infinite;
+  }
+
+  @keyframes move-mob {
+    0% {
+      transform: translateX(-30%);
+    }
+    100% {
+      transform: translateX(-130%);
+    }
+  }
+</style>

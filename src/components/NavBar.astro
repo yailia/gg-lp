@@ -1,0 +1,59 @@
+---
+import Button from "./shared/Button.astro";
+
+type Item = {
+  name: string;
+  href: string;
+};
+const items: Item[] = [
+  {
+    name: "мы",
+    href: "/",
+  },
+  {
+    name: "проекты",
+    href: "/",
+  },
+  {
+    name: "награды",
+    href: "/",
+  },
+  {
+    name: "контакты",
+    href: "/",
+  },
+];
+---
+
+<nav class="nav">
+  <ul class="nav__list">
+    {
+      items.map(i => (
+        <li class="nav__item">
+          <a class="nav__link" href={i.href}>{i.name}</a>
+        </li>
+      ))
+    }
+    <li class="nav__item">
+      <Button />
+    </li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  .nav.nav_sticky {
+    position: fixed;
+    top: 57px;
+  }
+  .nav__list {
+    margin: 0 auto;
+    display: flex;
+    max-width: 816px;
+    align-items: center;
+    justify-content: flex-end;
+    background: #FFFFFF;
+    border-radius: 30px;
+    gap: 70px;
+    filter: drop-shadow(6px 4px 14px rgba(0, 0, 0, 0.25));
+  }
+</style>
