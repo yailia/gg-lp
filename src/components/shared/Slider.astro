@@ -75,6 +75,9 @@ const mobLogos = [...logos].splice(logos.length / 2).concat([...logos].splice(0,
     margin: 0 1.75rem;
   }
   .slider__list {
+    @media (min-width: 1200px) {
+      padding-top: 4rem;
+    }
     padding-top: 1.5rem;
     animation: move 35s linear infinite;
   }

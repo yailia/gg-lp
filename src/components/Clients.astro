@@ -4,13 +4,23 @@ import Slider from "./shared/Slider.astro";
 
 ---
 <section class="clients">
-  <SectionTitle>клиенты</SectionTitle>
+  <div class="container">
+    <SectionTitle>клиенты</SectionTitle>
+  </div>
   <Slider />
 </section>
 
 <style lang="scss">
+
+  .container {
+    max-width: 817px;
+    margin: 0 auto;
+  }
   .clients {
     margin-bottom: 1rem;
+    @media (min-width: 1200px) {
+      margin-bottom: 4rem;
+    }
   }
 </style>
 

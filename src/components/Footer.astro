@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="footer__container">
     <div class="item item_ltd">
-      ООО "Джи Джи" креативное агентство
+      ооо "джи джи" креативное агентство
     </div>
     <div class="item item_cont">
       москва <br />
@@ -9,8 +9,8 @@
       Олимпийский проспект 16/5
     </div>
     <a href="mailto:welcome@aggency.ru" class="link">почта: welcome@aggency.ru</a>
+    <div class="date">{new Date().getFullYear()}</div>
   </div>
-  <div class="date">{new Date().getFullYear()}</div>
 </footer>
 
 <style lang="scss">
@@ -21,29 +21,60 @@
     background-color: #000000;
     color: #FFFFFF;
     font-weight: 300;
+    @media (min-width: 1200px) {
+      padding-top: 4rem;
+    }
   }
-
+  
   .footer__container {
     display: grid;
     grid-template-areas: 
-      "ltd"
-      "cont"
-      "link"
+    "ltd"
+    "cont"
+    "link"
     ;
+    @media (min-width: 1200px) {
+      max-width: 925px;
+      margin: 0 auto;
+      font-size: 28px;
+      grid-template-areas: 
+    "ltd link"
+    "cont link"
+    ;
+    }
   }
 
   .item_ltd {
     max-width: 11.5rem;
     margin-bottom: 18px;
+    @media (min-width: 1200px) {
+      max-width: 345px;
+    }
   }
-
+  
   .item_cont {
     max-width: 14rem;
+    @media (min-width: 1200px) {
+      max-width: 24rem;
+    }
   }
 
   .link {
     margin-top: 33px;
     margin-bottom: 33px;
+    @media (min-width: 1200px) {
+      grid-area: link;
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+  
+  .date {
+    @media (min-width: 1200px) {
+      font-size: 18px;
+      margin-top: 143px;
+    }
+    
   }
 
 </style>

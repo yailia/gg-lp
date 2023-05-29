@@ -49,6 +49,11 @@ import NavBar from "./NavBar.astro";
     padding-top: 2rem;
     padding-bottom: 34px;
     background: #EBD0BF url("/bg.webp") no-repeat center bottom /cover;
+    @media (min-width: 1200px) {
+      padding-top: 3rem;
+      margin-bottom: 4rem;
+      
+    }
   }
 
   .hero__nav {
@@ -78,15 +83,16 @@ import NavBar from "./NavBar.astro";
   .hero__title {
     margin-bottom: 18.75rem;
     @media (min-width: 1200px) {
-      margin-bottom: 233px;
+      margin-bottom: 13.625rem;
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: center;
       .hero__svg {
-        max-height: 70px;
+        max-height: 2.25rem;
         flex-basis: 100%;
         flex-grow: 1;
         flex-shrink: 0;
+        margin-bottom: 2.25rem;
       }
       .hero__text {
         font-size: 60px;
@@ -115,9 +121,9 @@ import NavBar from "./NavBar.astro";
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    max-width: 939px;
+    max-width: 61.25rem;
     @media (min-width: 1200px) {
-      margin-bottom: 109px;
+      margin-bottom: 5.75rem;
     }
   }
 
