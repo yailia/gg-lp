@@ -6,7 +6,6 @@
       muted
       playsinline
       preload="auto"
-      controls="false"
     >
       <source src="/vid.webm">
       <source src="/vid.mp4">
@@ -14,9 +13,9 @@
   </section>
 
 <script>
-
   const video = document.querySelector('.video__video') as HTMLVideoElement;
   const target = document.querySelector('.video__video');
+  video.controls = false;
   if (target) {
   const options = {
     root: null,
@@ -48,5 +47,8 @@
 
   .video__video {
     width: 100%;
+  }
+  .video__video:media-controls {
+    display: none;
   }
 </style>
