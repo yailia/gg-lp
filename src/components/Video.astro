@@ -5,9 +5,11 @@
       loop
       muted
       playsinline
-      preload="none"
+      preload="auto"
+      controls="false"
     >
       <source src="/vid.webm">
+      <source src="/vid.mp4">
     </video>
   </section>
 
@@ -25,19 +27,14 @@
   const cd: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log("play")
         video?.play();
       } else {
-        console.log("pause")
         video?.pause();
       }
     }, options);
   } 
   const observer = new IntersectionObserver(cd, options);
-
     observer.observe(target);
-
-    console.log("observer", observer)
   }
 </script>
 
