@@ -15,26 +15,26 @@ const items: Item[] = [
   {
     title: "video first",
     desc: "Съемочные проекты, ТВ-ролики и OLV, нестандартный видео-контент и co-creation с селебрити",
-    background: "url(/projects/bg1.webp)",
+    background: "url(/projects/v.jpg)",
     mod: "v"
   },
   {
     title: "Branding and craft",
     desc: "Разработка и запуск брендов, нейминг, упаковка, формирование долгосрочных стратегий развития, разработка гайдов",
-    background: "url(/projects/bg2.webp)",
+    background: "url(/projects/b_m.webp)",
     mod: "b"
   },
   {
     title: "Digital design",
     desc: "Разработка эко-системы коммуникаций в канале, платформ и программ, UX/UI, поддержка e-com",
-    background: "url(/projects/bg3.webp)",
+    background: "url(/projects/d_m.jpg)",
     mod: "d"
   },
   {
     title: "Retail",
     subtitle: "(in-store & e-comm)",
     desc: "Активации в канале, ритейл-дизайн, кастомизированные кампании с торговыми сетями, 15+ лет опыта работы в шопер марекетинге в России",
-    background: "url(/projects/bg4.webp)",
+    background: "url(/projects/r.jpg)",
     mod: "r"
   },
 ]
@@ -261,11 +261,14 @@ const items: Item[] = [
   .projects__item_b {
     padding-right: 3.125rem;
     padding-bottom: 19.43rem;
+    min-height: calc(490px - 1rem);
     z-index: 5;
-    background-position-y: -80px;
+    background: var(--bg) no-repeat center bottom/ 70%, linear-gradient(180deg, #D8AE6B 0%, #EBE9E5 65.1%, #C6C6C6 90.63%, #FFFFFF 100%);
+    // background-position-y: -80px;
     margin-bottom: 2rem;
     @media (min-width: 1200px) {
       background-position-y: -32px;
+      background: url("/projects/b.jpg") no-repeat center/ cover;
       
     }
     .projects__item-title {
@@ -306,7 +309,7 @@ const items: Item[] = [
     margin-bottom: 2rem;
     @media (min-width: 1200px) {
       height: calc(100% - 2rem);
-      background: #2100E9 url("/projects/bg-mob.webp") no-repeat right bottom;
+      background: #2100E9 url("/projects/d.png") no-repeat right bottom /152px auto;
       color: #FFFFFF;
 
       .projects__item-desc {
