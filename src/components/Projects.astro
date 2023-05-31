@@ -290,15 +290,21 @@ const items: Item[] = [
     left: 0;
     background-color: #00EEFF;
     z-index: -1;
+    @media (min-width: 1200px) {
+      bottom: -1rem;
+    }
   }
 
   .item_b::before {
     width: calc(100% - 1.3125rem - 1rem);
     height: calc(1rem + 1rem);
-    bottom: 0rem;
+    bottom: 0;
     left: 0;
     background-color: #9EF9FF;
     z-index: -1;
+    @media (min-width: 1200px) {
+      bottom: -2rem;
+    }
   }
   
   .projects__item_d {
