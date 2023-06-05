@@ -313,10 +313,16 @@ const items: Item[] = [
     padding-top: 3rem;
     z-index: 5;
     margin-bottom: 2rem;
+    background: #2100E9 url("/projects/d.png") no-repeat right bottom /152px auto;
+    color: #FFFFFF;
+    .projects__item-desc {
+      max-width: 149px;
+    }
     @media (min-width: 1200px) {
       height: calc(100% - 2rem);
-      background: #2100E9 url("/projects/d.png") no-repeat right bottom /152px auto;
-      color: #FFFFFF;
+      .projects__item-desc {
+        max-width: 100%;
+      }
 
       .projects__item-desc {
         max-width: 214px;
