@@ -1,14 +1,15 @@
 ---
 
+import l1 from "/logos/1.svg";
 import l3 from "/logos/3.svg";
 import l4 from "/logos/4.svg";
-import l5 from "/logos/5.svg";
+// import l5 from "/logos/5.svg";
 import l6 from "/logos/6.svg";
 import l7 from "/logos/7.svg";
 import l9 from "/logos/9.svg";
 // const logos = await Astro.glob('/public/logos/*.svg');
 
-const logos = [l3, l4, l5, l6, l7, l9, l3, l4, l5, l6, l7, l9];
+const logos = [l1, l3, l4, l6, l7, l9, l1, l3, l4, l6, l7, l9];
 
 const mobLogos = [...logos].splice(logos.length / 2).concat([...logos].splice(0, logos.length / 2));
 
