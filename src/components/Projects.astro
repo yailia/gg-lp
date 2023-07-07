@@ -49,7 +49,8 @@ const items: Item[] = [
         <div class="bold">интегрированные </div>
         <span>кампании</span>
         <span>с различным</span>
-        <span> миксом каналов</span>
+        <span> миксом </span>
+        <span> каналов</span>
       </div>
       <div class="projects__l">
         <Button />
@@ -85,23 +86,30 @@ const items: Item[] = [
     display: grid;
     justify-items: start;
     padding-left: 11px;
-    margin-bottom: 5.25rem;
+    margin-bottom: 4rem;
     @media (min-width: 1200px) {
+      margin-bottom: 0.25rem;
+      margin-top: 5rem;
       grid-template-columns: min-content auto;
       gap: 50px;
       align-items: start;
-      margin-top: 5rem;
     }
   }
   .projects__text-content {
     margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr;
+    margin-bottom: 1.5rem;
     font-size: 2.25rem;
-    line-height: 0.8;
+    line-height: 0.9;
     font-weight: 300;
+    display: block;
+    max-width: min-content;
+    span {
+      display: inline;
+    }
     @media (min-width: 1200px) {
+      margin-bottom: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
       font-size: 3.75rem;
       margin-top: 0;
     }
@@ -132,7 +140,7 @@ const items: Item[] = [
   
   .projects__item {
     padding-top: 1.625rem;
-    padding-left: 1.25rem;
+    padding-left: 1.25rem;  
     background: var(--bg) no-repeat center/ cover;
     border-radius: 0.625rem;
     @media (min-width: 1200px) {
@@ -165,8 +173,14 @@ const items: Item[] = [
     position: relative;
   } 
   .projects__item_v {
+    background-image: url("/projects/v_m.jpg");
+    background-position: bottom;
     @media (min-width: 1200px) {
+      background-image: var(--bg);
       padding-top: 24.5rem;
+      .projects__item-title {
+        margin-bottom: 2.125rem;
+      }
     }
     padding-top: 18.0625rem;
     padding-right: 3.125rem;
@@ -200,7 +214,7 @@ const items: Item[] = [
   .item_b {
     @media (min-width: 1200px) {
       grid-area: b;
-      max-height: 655px;
+      max-height: 623px;
       transform: translateY(70px);
     }
   }

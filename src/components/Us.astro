@@ -17,7 +17,7 @@ const items: Item[] = [
   },
   {
     number: 70,
-    addText: "талантов в\u00A0команде",
+    addText: "талантов<br/> в команде",
     hasPlus: true,
   },
   {
@@ -81,7 +81,7 @@ const items: Item[] = [
       grid-template-areas:
       "f s"
       "f t";
-      grid-template-columns: min-content min-content;
+      grid-template-columns: min-content auto;
       // align-items: start;
       // justify-items: start;
     }
@@ -218,20 +218,24 @@ const items: Item[] = [
     --number-size: 4.8rem;
     --plus-size: 0px;
     @media (min-width: 1200px) {
+      padding-top: 0;
       --number-size: 7rem;
-      
+      .des_ad {
+        max-width: unset;
+      }
       .number {
         line-height: 1.7;
       }
       .number__wrp {
-        gap: 0 23px;
+        gap: 0 8px;
+        grid-template-columns: min-content auto;
       }
       .number__desc-wrp {
-        transform: translateY(46px);
+        transform: translateY(40px);
       }
     }
     .number__wrp {
-      padding-left: 4.5rem;
+      padding-left: 5.5rem;
     }
   }
 </style>
